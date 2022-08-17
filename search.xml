@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>shell</title>
+      <link href="/2022/08/17/shell/"/>
+      <url>/2022/08/17/shell/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="脚本配置本地源"><a href="#脚本配置本地源" class="headerlink" title="脚本配置本地源"></a>脚本配置本地源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建本地源文件夹</span></span><br><span class="line">mkdir -p /media/centos/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂载镜像文件至指定的目录</span></span><br><span class="line">mount /dev/cdrom /media/centos</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份原本地源</span></span><br><span class="line">cp -rf /etc/yum.repos.d  /etc/yum.repos.d_$(date &#x27;+%Y%m%d_%H%M%S&#x27;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除默认原本地源</span></span><br><span class="line">rm -rf /etc/yum.repos.d/*</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置本地源,创建Media.repo文件,并配置如下内容</span></span><br><span class="line">cd /etc/yum.repos.d/</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">Media.repo</span></span><br><span class="line">echo &#x27;[iso]&#x27;                            &gt;&gt; Media.repo</span><br><span class="line">echo &#x27;name=Media&#x27;                       &gt;&gt; Media.repo</span><br><span class="line">echo &#x27;baseurl=file:///media/centos/&#x27;    &gt;&gt; Media.repo</span><br><span class="line">echo &#x27;gpgcheck=0&#x27;                       &gt;&gt; Media.repo</span><br><span class="line">echo &#x27;enabled=1&#x27;                        &gt;&gt; Media.repo</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清除yum缓存</span></span><br><span class="line">yum clean all</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">缓存本地yum源</span></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux</title>
       <link href="/2022/08/16/Linux/"/>
       <url>/2022/08/16/Linux/</url>
